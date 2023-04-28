@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rate_of_Satisfaction_form_Support_Agent__c</fullName>
+    <description>Overall, how satisfied or dissatisfied are you with the support team member who assisted you on this issue?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Overall, how satisfied or dissatisfied are you with the support team member who assisted you on this issue?</inlineHelpText>
+    <label>Rate of Satisfaction form Support Agent?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Dissatisfied</fullName>
+                <default>false</default>
+                <label>Dissatisfied</label>
+            </value>
+            <value>
+                <fullName>Neither dissatisfied nor Satisfied</fullName>
+                <default>false</default>
+                <label>Neither dissatisfied nor Satisfied</label>
+            </value>
+            <value>
+                <fullName>Satisfied</fullName>
+                <default>false</default>
+                <label>Satisfied</label>
+            </value>
+            <value>
+                <fullName>Extremely Satisfied</fullName>
+                <default>false</default>
+                <label>Extremely Satisfied</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

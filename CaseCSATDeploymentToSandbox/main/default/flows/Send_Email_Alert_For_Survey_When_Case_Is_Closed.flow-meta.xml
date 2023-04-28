@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>This is used to send email alert for feedback</description>
+        <name>Feedback_email_Alert_Action</name>
+        <label>Feedback email Alert Action</label>
+        <locationX>645</locationX>
+        <locationY>541</locationY>
+        <actionName>Case.Feedback_Email_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Assign_User_Id_To_Collection_For_Custom_Notification</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>This is used to send custom notification to specific user</description>
+        <name>Send_Custom_Notification_To_Portal_User_For_Case_Survey</name>
+        <label>Send Custom Notification To Portal User For Case Survey</label>
+        <locationX>713</locationX>
+        <locationY>755</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <stringValue>0ML1y0000004IgoGAE</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>CustomNotificationBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <elementReference>CustomNotificationSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>RecipientIDForCustomNotificationCollection</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetPageRef</name>
+            <value>
+                <stringValue>{     type: &apos;standard__webPage&apos;,     attributes: {         url: &apos;https://acceldatatechnology--dev.sandbox.my.site.com/s/case-survey?recordId={!$Record.Id}&apos; } }</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>57.0</apiVersion>
+    <assignments>
+        <description>This is used to get user id for sending custom notification</description>
+        <name>Assign_User_Id_To_Collection_For_Custom_Notification</name>
+        <label>Assign User Id To Collection For Custom Notification</label>
+        <locationX>542</locationX>
+        <locationY>670</locationY>
+        <assignmentItems>
+            <assignToReference>RecipientIDForCustomNotificationCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Get_User_ID_For_Sending_Custom_Notification.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Custom_Notification_To_Portal_User_For_Case_Survey</targetReference>
+        </connector>
+    </assignments>
+    <description>This Flow Is Used To Send Email Alert For Survey When Case Is Closed</description>
+    <environments>Default</environments>
+    <interviewLabel>Send Email Alert When Case Is Closed {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Send Email Alert For Survey When Case Is Closed</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>This is used to get specific user ID for custom notification</description>
+        <name>Get_User_ID_For_Sending_Custom_Notification</name>
+        <label>Get User ID For Sending Custom Notification</label>
+        <locationX>362</locationX>
+        <locationY>359</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Survey_Sent_Date_Time_In_Case</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>LastName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Contact.LastName</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>This is used to update survey sent date/time field in case record</description>
+        <name>Update_Survey_Sent_Date_Time_In_Case</name>
+        <label>Update Survey Sent Date/Time In Case</label>
+        <locationX>389</locationX>
+        <locationY>516</locationY>
+        <connector>
+            <targetReference>Feedback_email_Alert_Action</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Survey_Sent_Checkbox__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Survey_Sent_Date_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>458</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Get_User_ID_For_Sending_Custom_Notification</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>IsClosed</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Case</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <description>Body for custom notification</description>
+        <name>CustomNotificationBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Please Complete The Survey For Case:{!$Record.Id} By Clicking Here</text>
+    </textTemplates>
+    <textTemplates>
+        <description>Subject for custom notification</description>
+        <name>CustomNotificationSubject</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Please Complete The Survey</text>
+    </textTemplates>
+    <textTemplates>
+        <name>EmailContent</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Please Complete &lt;a href=&quot;https://acceldatatechnology--dev.sandbox.my.site.com/casesurvey/s/case/{!$Record.Id}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Survey&lt;/a&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>EmailSubject</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Case Survey</text>
+    </textTemplates>
+    <variables>
+        <name>RecipientID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <elementReference>$Record.ContactId</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <name>RecipientIDForCustomNotificationCollection</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Acceldata Email Template</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  .header{
+  background-color:#0A264A;
+
+   padding-top:20px;
+   padding-bottom:20px;
+  }
+   .footer{
+  background-color:#0A264A;
+color:white;
+   padding-top:10px;
+   padding-bottom:10px;
+  }
+  .header_img 
+  {
+  height:50px;
+  }
+.footer_img
+{
+height:30px;
+}
+.icon{
+color:white;
+background-color:rgba(0,46,91,0.8);
+padding:7px;
+}
+.button{
+	background-color: #0077D9;
+    border: solid 1px #0077D9;
+    color: white;
+    padding: 4px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row header">
+   <div class="col text-right">
+   <img src="https://acceldata.force.com/file-asset/Acceldata_Logo_White?v=1"class="header_img"/>
+   </div>
+  </div>
+  <div class="row">
+  <div class="col text-center" > 
+  <center><h2 class="text-info border-bottom p-3"  style="color:#0A264A;"><u>How did we do?</u></h2></center><hr style="width:100%;text-align:left;margin-left:0">
+  <div class="col text-left" > 
+  <h4>Hi {!Case.Contact}, </h4>
+  <h4>We wanted to know how it's going since we worked with you to resolve {!Case.CaseNumber}. We've prepared a short survey that you can fill out to share your thoughts with us. Your answers will help us serve you better in the future, and it will only take a few minutes to complete the survey. </h4>
+<h4>Cheers, </h4>
+<h4>Acceldata Support Team</h4>
+  <div style="text-align: center;">
+	<a href="https://acceldatatechnology--dev.sandbox.my.site.com/s/case-survey?recordId={!Case.Id}" class="button">Take the survey</a>
+  </div>
+<div class="col text-left" > 
+  </div>
+  </div>
+	<div class="row footer">
+		<div class="text-left" style="width: 250px;text-align: left; float: left;padding-left: 10px;">
+		   <img src="https://acceldata.force.com/file-asset/Acceldata_Logo_White?v=1" class="footer_img"/>
+		</div>
+		<div class="text-right" style="padding-right:10px;padding-top: 5px;width: 250px;text-align: right;float: right;">
+			<a href="https://twitter.com/acceldataio"><img src="	https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/twitter_circle-512.png" style="height:30px;"/></a>
+			<a 
+<a href="https://www.linkedin.com/company/acceldata/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/800px-LinkedIn_icon_circle.svg.png" style="height:30px;"/></a>
+		</div>
+		<div class="col" style="padding-top: 20px;padding-left: 10px;">
+			<p style="font-weight: 200;font-size: 0.85rem;">
+			<br>Data observality for the modern data stack
+			</p>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
+</html>

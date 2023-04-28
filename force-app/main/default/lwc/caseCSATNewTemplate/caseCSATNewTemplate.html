@@ -1,0 +1,187 @@
+<template>
+  
+  <div class="slds-size_xx-large slds-align_absolute-center" lwc:if={renderCaseCsatCardFieldNewM}>
+
+    
+    <lightning-card >
+     
+     
+       <div class="slds-box slds-align_absolute-center slds-box_x-small slds-m-around_x-small"  style="background-color:#0A264A;">
+        <img src={acceldatalogo} class="slds-p-around_x-small" style="height:50%; width:50%;"/>
+    </div>
+    <br>
+        <div class="slds-box slds-box_x-small slds-m-around_x-small" style="background-color:rgb(238, 238, 238);">
+          <p class="slds-p-around_x-small slds-align_absolute-center">Thank you for offering your feedback on your Acceldata customer support experience.</p>
+          <p class="slds-p-around_x-small slds-align_absolute-center">Understanding your experiences and opinions helps us make Acceldata support better for you and others.</p>
+        </div>
+        <br>
+        <div class="slds-box slds-box_xx-small slds-m-around_x-small" style="background-color:rgb(238, 238, 238);" >
+        <p class="slds-p-around_x-small slds-align_absolute-center" >How likely are you to recommend Acceldata's CUSTOMER SUPPORT to others?</p><br>
+    </div>
+    
+       <div  ><p class=" slds-float_left slds-p-around-medium">&nbsp;&nbsp;&nbsp;Not at all likely</p></div>
+       <div ><p class="slds-float_right slds-p-around-medium">Extremely likely&nbsp;&nbsp;&nbsp;</p></div>
+       <br>
+       <br>
+     
+        <lightning-layout class="slds-grid_align-spread slds-m-around_medium">
+            
+            <lightning-layout-item><lightning-button-stateful   label-when-on="0" label-when-off="0" class="testbtn" selected={isSelected} onclick={handleClick} ></lightning-button-stateful></lightning-layout-item>
+            
+            <lightning-layout-item><lightning-button-stateful  label-when-on="1" label-when-off="1" class="testbtnone" selected={isSelectedOne} onclick={handleClickOne}></lightning-button-stateful></lightning-layout-item>
+            <lightning-layout-item><lightning-button-stateful  label-when-on="2" label-when-off="2" class="testbtntwo" selected={isSelectedTwo} onclick={handleClickTwo}></lightning-button-stateful></lightning-layout-item>
+            <lightning-layout-item><lightning-button-stateful  label-when-on="3" label-when-off="3" class="testbtnthree" selected={isSelectedThree} onclick={handleClickThree}></lightning-button-stateful></lightning-layout-item>
+            <lightning-layout-item><lightning-button-stateful  label-when-on="4" label-when-off="4" class="testbtnfour" selected={isSelectedFour} onclick={handleClickFour}></lightning-button-stateful></lightning-layout-item>
+            <lightning-layout-item><lightning-button-stateful  label-when-on="5" label-when-off="5" class="testbtnfive" selected={isSelectedFive} onclick={handleClickFive}></lightning-button-stateful></lightning-layout-item>
+            <lightning-layout-item><lightning-button-stateful  label-when-on="6" label-when-off="6" class="testbtnsix" selected={isSelectedSix} onclick={handleClickSix}></lightning-button-stateful></lightning-layout-item>
+            <lightning-layout-item><lightning-button-stateful  label-when-on="7" label-when-off="7" class="testbtnseven" selected={isSelectedSeven} onclick={handleClickSeven}></lightning-button-stateful></lightning-layout-item>
+            <lightning-layout-item><lightning-button-stateful  label-when-on="8" label-when-off="8" class="testbtneight" selected={isSelectedEight} onclick={handleClickEight}></lightning-button-stateful></lightning-layout-item>
+            <lightning-layout-item><lightning-button-stateful  label-when-on="9" label-when-off="9" class="testbtnnine" selected={isSelectedNine} onclick={handleClickNine}></lightning-button-stateful></lightning-layout-item>
+            <lightning-layout-item><lightning-button-stateful  label-when-on="10" label-when-off="10" class="testbtnten" selected={isSelectedTen} onclick={handleClickTen}></lightning-button-stateful></lightning-layout-item>
+
+        </lightning-layout>
+    
+        <br>
+        <br>
+        <div class="slds-box slds-box_xx-small slds-m-around_x-small" style="background-color:rgb(238, 238, 238);" >
+            <p class="slds-p-around_x-small slds-align_absolute-center" >To what extent do you agree or disagree with the following statements?</p><br>
+        </div>
+    
+        <lightning-layout class="slds-p-around_medium slds-grid_align-spread  ">
+
+          <lightning-layout-item >
+         
+            <br>
+             <br>
+             <div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="slds-m-top_medium">Acceldata made it easy for me to handle my issue</div>
+                <br>
+                <div>I received timely response and next plan of actions <br>on my ticket from Acceldata Support</div>
+                
+
+             </div>
+
+          </lightning-layout-item>
+         
+          <lightning-layout-item >
+              <div>Disagree</div>
+              <br>
+              <br>
+              <br>
+              <div>
+                <br>
+                <br>
+                <br>
+                <lightning-input  type="checkbox"  onchange={handleClickRowOneFirst} disabled={isDisabledRowOneFirst}  ></lightning-input>
+                <br>
+                <lightning-input   type="checkbox" onchange={handleClickRowTwoFirst} disabled={isDisabledRowTwoFirst}></lightning-input>
+                
+              </div>
+
+
+
+          </lightning-layout-item>&nbsp;
+         
+          <lightning-layout-item >
+            <div >Neither<br>agree nor<br>disagree</div>
+            <br>
+            <br>
+            <br>
+            <div >
+                <br>
+                
+                
+              <lightning-input  type="checkbox" onchange={handleClickRowOneSecond} disabled={isDisabledRowOneSecond} ></lightning-input>
+              <br>
+              <lightning-input   type="checkbox" onchange={handleClickRowTwoSecond} disabled={isDisabledRowTwoSecond}></lightning-input>
+            </div>
+
+
+        </lightning-layout-item>&nbsp;
+      
+        <lightning-layout-item >
+            <div >Agree</div>
+            <br>
+            <br>
+            <br>
+            <div>
+                <br>
+                <br>
+                <br>
+              <lightning-input  type="checkbox" onchange={handleClickRowOneThird} disabled={isDisabledRowOneThird}></lightning-input>
+              <br>
+              <lightning-input  type="checkbox" onchange={handleClickRowTwoThird} disabled={isDisabledRowTwoThird}></lightning-input>
+             
+            </div>
+
+
+
+        </lightning-layout-item>&nbsp;&nbsp;&nbsp;
+        <lightning-layout-item>
+            <div >Strongly<br>Agree</div>
+            <br>
+            <br>
+            <div>
+                <br>
+                <br>
+                <br>
+              <lightning-input  type="checkbox" onchange={handleClickRowOneFourth} disabled={isDisabledRowOneFourth} ></lightning-input>
+              <br>
+              <lightning-input   type="checkbox" onchange={handleClickRowTwoFourth} disabled={isDisabledRowTwoFourth}></lightning-input>
+           
+            </div>
+
+
+
+        </lightning-layout-item>
+
+        </lightning-layout>
+        <br>
+        <div  class="slds-box slds-box_x-small slds-m-around_x-small" style="background-color:rgb(238, 238, 238);">
+        <p class="slds-p-around_x-small slds-align_absolute-center" style="background-color:rgb(238, 238, 238);">Overall, how satisfied or dissatisfied are you with the support team member who assisted you on this issue?</p><br>
+        </div>
+        <div >
+        <lightning-layout class="slds-grid_align-spread slds-m-around_medium">
+          <lightning-layout-item><lightning-button-stateful class="overallone" label-when-on="Dissatisfied" label-when-off="Dissatisfied" selected={isSelectedOverallOne} onclick={handleClickOverallOne}></lightning-button-stateful> </lightning-layout-item>
+            <lightning-layout-item><lightning-button-stateful class="overalltwo" label-when-on="Neither dissatisfied nor Satisfied" label-when-off="Neither dissatisfied nor Satisfied" selected={isSelectedOverallTwo} onclick={handleClickOverallTwo}></lightning-button-stateful> </lightning-layout-item>
+              <lightning-layout-item><lightning-button-stateful class="overallthree" label-when-off="Satisfied" label-when-on="Satisfied" selected={isSelectedOverallThree} onclick={handleClickOverallThree}></lightning-button-stateful> </lightning-layout-item>
+                <lightning-layout-item><lightning-button-stateful class="overallfour" label-when-off="Extremely Satisfied" label-when-on="Extremely Satisfied" selected={isSelectedOverallFour} onclick={handleClickOverallFour}></lightning-button-stateful> </lightning-layout-item>
+       </lightning-layout>
+        </div>
+        <br>
+        
+        <lightning-record-edit-form
+        
+        object-api-name={objectApiName}
+        record-id={recordId}
+        onsuccess={handleSubmitCaseSurveyx}
+        onsubmit={handleOnSubmitCaseSurveyx}
+        onerror={handleErrorOnSubmitCaseSurveyx}
+      >
+        <lightning-input-field class="slds-hide" field-name={firstPartQuestionLabel} value={firstPartQuestionValueNewM}></lightning-input-field>
+        <lightning-input-field class="slds-hide" field-name={secondPartQuestionLabel} value={secondPartQuestionValueNewM}> </lightning-input-field>
+        <lightning-input-field class="slds-hide" field-name={secondPartSecondQuestionLabel} value={secondPartSecondQuestionValueNewM}> </lightning-input-field>
+        <lightning-input-field class="slds-hide" field-name={thirdPartQuestionLabel} value={thirdPartQuestionValueNewM}> </lightning-input-field>
+        <lightning-input-field class="slds-hide" field-name={surveySubmittedLabel} value={surveySubmittedCheckboxValueNewM}> </lightning-input-field>
+         <div class="slds-box slds-box_x-small slds-m-around_x-small" style="background-color:rgb(238, 238, 238);">
+            <lightning-button class="slds-align_absolute-center slds-size_small" variant="brand" type="submit" label="Submit Survey">
+            </lightning-button>
+          </div>
+      </lightning-record-edit-form>
+ 
+
+
+    </lightning-card>
+
+
+  </div>  
+  <div class="slds-card" lwc:else>
+      <h3 class="slds-align_absolute-center slds-text-title_bold" style="background-color:white; font-family:'Lato'; font-size:13px;">Feedback Submitted Successfully</h3> 
+  </div>
+ 
+
+</template>

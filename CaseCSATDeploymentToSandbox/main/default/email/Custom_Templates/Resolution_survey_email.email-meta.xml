@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Resolution survey email</name>
+    <style>none</style>
+    <subject>Customer Service Feedback for {!Case.CaseNumber}</subject>
+    <textOnly>How did we do?
+Hi {!Case.Contact}, 
+ We wanted to know how it&apos;s going since we worked with you to resolve {!Case.CaseNumber}. We&apos;ve prepared a short survey that you can fill out to share your thoughts with us. Your answers will help us serve you better in the future, and it will only take a few minutes to complete the survey. 
+
+Cheers,
+Acceldata Support Team,</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

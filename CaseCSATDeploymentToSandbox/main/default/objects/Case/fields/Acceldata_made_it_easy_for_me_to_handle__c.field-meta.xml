@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Acceldata_made_it_easy_for_me_to_handle__c</fullName>
+    <description>Acceldata made it easy for me to handle my issue</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Acceldata made it easy for me to handle my issue</inlineHelpText>
+    <label>Aceldata made easy to me handle my isue?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Disagree</fullName>
+                <default>false</default>
+                <label>Disagree</label>
+            </value>
+            <value>
+                <fullName>Neither agree nor disagree</fullName>
+                <default>false</default>
+                <label>Neither agree nor disagree</label>
+            </value>
+            <value>
+                <fullName>Agree</fullName>
+                <default>false</default>
+                <label>Agree</label>
+            </value>
+            <value>
+                <fullName>Strongly Agree</fullName>
+                <default>false</default>
+                <label>Strongly Agree</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
